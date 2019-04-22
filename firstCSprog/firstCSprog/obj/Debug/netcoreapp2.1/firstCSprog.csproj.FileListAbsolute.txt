@@ -1,0 +1,11 @@
+D:\Code\CSharp\firstCSprog\firstCSprog\obj\Debug\netcoreapp2.1\firstCSprog.csprojAssemblyReference.cache
+D:\Code\CSharp\firstCSprog\firstCSprog\obj\Debug\netcoreapp2.1\firstCSprog.csproj.CoreCompileInputs.cache
+D:\Code\CSharp\firstCSprog\firstCSprog\obj\Debug\netcoreapp2.1\firstCSprog.AssemblyInfoInputs.cache
+D:\Code\CSharp\firstCSprog\firstCSprog\obj\Debug\netcoreapp2.1\firstCSprog.AssemblyInfo.cs
+D:\Code\CSharp\firstCSprog\firstCSprog\bin\Debug\netcoreapp2.1\firstCSprog.deps.json
+D:\Code\CSharp\firstCSprog\firstCSprog\bin\Debug\netcoreapp2.1\firstCSprog.runtimeconfig.json
+D:\Code\CSharp\firstCSprog\firstCSprog\bin\Debug\netcoreapp2.1\firstCSprog.runtimeconfig.dev.json
+D:\Code\CSharp\firstCSprog\firstCSprog\bin\Debug\netcoreapp2.1\firstCSprog.dll
+D:\Code\CSharp\firstCSprog\firstCSprog\bin\Debug\netcoreapp2.1\firstCSprog.pdb
+D:\Code\CSharp\firstCSprog\firstCSprog\obj\Debug\netcoreapp2.1\firstCSprog.dll
+D:\Code\CSharp\firstCSprog\firstCSprog\obj\Debug\netcoreapp2.1\firstCSprog.pdb
