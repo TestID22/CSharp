@@ -1,0 +1,6 @@
+D:\Projects\C#\example\example\bin\Release\example.exe.config
+D:\Projects\C#\example\example\bin\Release\example.exe
+D:\Projects\C#\example\example\bin\Release\example.pdb
+D:\Projects\C#\example\example\obj\Release\example.csproj.CoreCompileInputs.cache
+D:\Projects\C#\example\example\obj\Release\example.exe
+D:\Projects\C#\example\example\obj\Release\example.pdb

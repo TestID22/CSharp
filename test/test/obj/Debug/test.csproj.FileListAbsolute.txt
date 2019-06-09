@@ -1,0 +1,10 @@
+D:\Projects\C#\test\test\bin\Debug\test.exe.config
+D:\Projects\C#\test\test\bin\Debug\test.exe
+D:\Projects\C#\test\test\bin\Debug\test.pdb
+D:\Projects\C#\test\test\bin\Debug\WebDriver.dll
+D:\Projects\C#\test\test\bin\Debug\WebDriver.xml
+D:\Projects\C#\test\test\obj\Debug\test.csprojAssemblyReference.cache
+D:\Projects\C#\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+D:\Projects\C#\test\test\obj\Debug\test.csproj.CopyComplete
+D:\Projects\C#\test\test\obj\Debug\test.exe
+D:\Projects\C#\test\test\obj\Debug\test.pdb
