@@ -28,6 +28,7 @@ namespace createClass
                     break;
             }
 
+            Console.WriteLine(Elliot.ToString());
             Console.ReadLine();
         }
     }

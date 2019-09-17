@@ -37,5 +37,13 @@ namespace createClass
         {
             Console.WriteLine("Иду к Тайлеру");
         }
+
+        public override string ToString()
+        {
+            string tmp;
+            tmp = string.Format("Имя {0}", name);
+            return tmp;
+            
+        }
     }
 }
