@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace createClass
 {
+    //имя Класса
     class Hacker
     {
+        //поле Класса, по сути простая переменная с модификатором доступа
         private string name;
-
-        public Hacker(string name)
+        //Конструктор класса - его имя совпадает с именем Класса
+        public Hacker(string name) //параметр типа string name
         {
-            this.name = name;
+            this.name = name; //полю класса приравнивается параметр конструктора
         }
+        //метод Класса
         public void hackCoorpEvil()
         {
             Console.Clear();
