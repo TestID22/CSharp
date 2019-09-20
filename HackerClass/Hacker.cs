@@ -36,11 +36,12 @@ namespace createClass
             Console.Write("\n");
             Console.WriteLine("password:*******");
         }
+        //метод Класса
         public void GoToTyrell()
         {
             Console.WriteLine("Иду к Тайлеру");
         }
-
+        //переопределённый метод общего класса Object
         public override string ToString()
         {
             string tmp;
