@@ -10,6 +10,8 @@ namespace createClass
     {
         static void Main(string[] args)
         {
+            //создаём Объект, нашего Класса, который мы написали на первой странице, имя Объекта Элиот,
+            //Конструктор класса принимает параметр строки где мы присвоили ИМЯ.
             Hacker Elliot = new Hacker("Elliot");
             
             Console.WriteLine("1:Взломать Корпроацию зла");
