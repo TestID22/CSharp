@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PtocessKill", "PtocessKill.csproj", "{D24F696B-20A0-4131-B89C-3523D9B26EF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D24F696B-20A0-4131-B89C-3523D9B26EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24F696B-20A0-4131-B89C-3523D9B26EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24F696B-20A0-4131-B89C-3523D9B26EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24F696B-20A0-4131-B89C-3523D9B26EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB359D35-05CC-4906-81F0-64C30D4E657F}
+	EndGlobalSection
+EndGlobal
