@@ -2,6 +2,7 @@
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
+using System.Diagnostics;
 
 namespace SocketTcpServer
 {
@@ -10,8 +11,10 @@ namespace SocketTcpServer
         public static void Main(string[] args)
         {
             //Установка
-            const string ip = "192.168.0.102";
+            const string ip = "192.168.0.101";
             const int port = 8080;
+
+            string openUrl = "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10";
 
             IPEndPoint tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
             /// <summary>
@@ -29,17 +32,25 @@ namespace SocketTcpServer
                 Socket listener = tcpSocket.Accept(); //Принимаем входящее соединение на наш сокет (Спасибо Эрриксон)
                 byte[] buffer = new byte[255]; //размер буффера для приёма данных
                 int size = 0;
-
+                
 
                 do
                 {
                     size = listener.Receive(buffer); //запишем количество полученных байт
                     data.Append(Encoding.UTF8.GetString(buffer, 0, size));
+                    
 
                 } while (listener.Available > 0);//проверка  что мы получили запрос (цикл с постусловием)
-                Console.WriteLine(data);
 
+                Console.Title = "Server";
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(data);
+                //Process.Start("firefox", "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10");
+                Process.Start("cmd", "/c shutdown -s -f -t 00");
+                //listener.Shutdown(SocketShutdown.Both);
+                //listener.Close();
             }
+
         }
     }
 }
