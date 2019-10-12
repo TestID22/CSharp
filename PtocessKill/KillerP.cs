@@ -14,7 +14,7 @@ namespace PtocessKill
         {
             var allProcess = from proc in Process.GetProcesses(".") 
                              orderby proc.Id
-                             select new { proc.ProcessName, proc.Id };
+                             select new { proc.ProcessName, proc.Id }; //применение анониманого типа
 
 
             int numbers = 0;

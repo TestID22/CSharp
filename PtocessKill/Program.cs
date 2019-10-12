@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PtocessKill
@@ -10,7 +11,6 @@ namespace PtocessKill
     {
         static void Main(string[] args)
         {
-
             KillerP.LoadAllProcess();
 
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -19,14 +19,19 @@ namespace PtocessKill
             int processIdNumber = int.Parse(Console.ReadLine());
             KillerP.GetProcess(processIdNumber);
 
+
             OpenUrlInBrows();
+
+            System.Diagnostics.Process.Start("cmd", "/c ipconfig");
+            
             Console.ReadLine();
         }
-
+        //опаршиваюший метод
         private static void OpenUrlInBrows()
         {
             Console.WriteLine("Введите ваш браузер и сайт");
             string startProcessName = Console.ReadLine();
+            Console.WriteLine("Введите адресс");
             string url = Console.ReadLine();
             KillerP.Start(startProcessName, url);
         }
