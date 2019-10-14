@@ -11,7 +11,7 @@ namespace SocketTcpServer
         public static void Main(string[] args)
         {
             //Установка
-            const string ip = "192.168.0.101";
+            const string ip = "192.168.0.102";
             const int port = 8080;
 
             string openUrl = "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10";
