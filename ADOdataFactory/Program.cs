@@ -47,13 +47,14 @@ namespace ADOdataFactory
                 command.Connection = con;
                 command.CommandText = "Select * From Inventory";//SQL запрос к БД
 
-
+                Console.WriteLine();
+                //получить объекта для чтение (отправка на чтение данных)
                 using(DbDataReader reader = command.ExecuteReader())
                 {
                     Console.WriteLine($"Твой тип команды {reader.GetType().Name}");
                     while (reader.Read())
                     {
-                        Console.WriteLine(" \"ID\"{0} MAKE - {1}",reader["CarId"], reader["Make"]);
+                        Console.WriteLine(" \"ID\"{0} MAKE - {1} Color - {2}",reader["CarId"], reader["Make"], reader[2]);
                     }
                 }
     
