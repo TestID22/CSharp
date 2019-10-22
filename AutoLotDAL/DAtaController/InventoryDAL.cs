@@ -8,13 +8,15 @@ using System.Data.SqlClient;
 using AutoLotDAL.Model;
 
 namespace AutoLotDAL.DAtaController
-{
+{/// <summary>
+/// CRUD with ADO.NET
+/// </summary>
     public class InventoryDAL
     {
         //строка подключения
         private readonly string ConntecionString;
         //объект подключения
-        private SqlConnection SqlConnection = null;
+        private SqlConnection Connection = null;
         
         public InventoryDAL() :this(@"Data Source = (localdb)\mssqllocaldb; 
                                     Integrated Security = true; 
@@ -25,17 +27,17 @@ namespace AutoLotDAL.DAtaController
 
         private void OpenConnetction()
         {
-            SqlConnection = new SqlConnection(ConntecionString);
-            SqlConnection.Open();
-            Console.WriteLine("{0}", SqlConnection.GetType());
+            Connection = new SqlConnection(ConntecionString);
+            Connection.Open();
+            Console.WriteLine("{0}", Connection.GetType());
 
         }
 
         private void CloseConnection()
         {
-            if(SqlConnection?.State != ConnectionState.Closed)
+            if(Connection?.State != ConnectionState.Closed)
             {
-                SqlConnection?.Close();
+                Connection?.Close();
             }
         }
 
@@ -47,7 +49,7 @@ namespace AutoLotDAL.DAtaController
             List<Car> inventory = new List<Car>();
             //создадим команду для запроса данных
             string command = "Select * From Inventory";
-            using(SqlCommand sqlCommand = new SqlCommand(command, SqlConnection))
+            using(SqlCommand sqlCommand = new SqlCommand(command, Connection))
             {
                 sqlCommand.CommandType = CommandType.Text;
                 //создаём объект Чтения CommandBehavior - свойсто для закрытия подключения.
@@ -73,7 +75,7 @@ namespace AutoLotDAL.DAtaController
             OpenConnetction();
             Car car = null;
             string sqlRequest = $"Select * From Inventory where CarId = {id}";
-            using (SqlCommand command = new SqlCommand(sqlRequest, SqlConnection))
+            using (SqlCommand command = new SqlCommand(sqlRequest, Connection))
             {
                 command.CommandType = CommandType.Text;
                 SqlDataReader dataReader = command.ExecuteReader(CommandBehavior.CloseConnection);
@@ -92,7 +94,66 @@ namespace AutoLotDAL.DAtaController
             return car;
         }
 
+        public void InsertAuto(string make, string color, string petName)
+        {
+            OpenConnetction();
+            //sql запрос
+            string sql = $"Insert Into Inventory (Make, Color, PetName) Values ('{make}','{color}','{petName}')";
+            using (SqlCommand sqlCommand = new SqlCommand(sql, Connection))
+            {
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.ExecuteNonQuery();
+            }
+            CloseConnection();
+            
+        }
 
+        public void InsertAuto(Car car)
+        {
+            OpenConnetction();
+            //sql запрос
+            string sql = $"Insert Into Inventory (Make, Color, PetName) " +
+                         $"Valuse('{car.Make}', '{car.Color},'{car.PetName}')";
+            using (SqlCommand sqlCommand = new SqlCommand(sql, Connection))
+            {
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.ExecuteNonQuery();
+            }
+            CloseConnection();
+        }
+
+        public void DeleteCar(int id)
+        {
+            OpenConnetction();
+            string sql = $"Delete From Inventory Where CarId = '{id}'";
+            using(SqlCommand sqlCommand = new SqlCommand(sql, Connection))
+            {
+                try
+                {
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch(SqlException ex)
+                {
+                    throw new Exception("Машина уже куплена");
+                }
+            }
+            CloseConnection();
+        }
+
+        public void Update(int id, string petName)
+        {
+            OpenConnetction();
+
+            string sql = $"Update Inventory Set PetName = '{petName}' Where CarID = '{id}'";
+            using(SqlCommand sqlCommand = new SqlCommand(sql, Connection))
+            {
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.ExecuteNonQuery();
+            }
+            CloseConnection();
+
+        }
 
     } 
 }
