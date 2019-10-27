@@ -13,7 +13,6 @@ namespace DelegateAndCallBack
         {
             
             Account acc = new Account(1000);
-            
 
             //Регистрация нового делегата через метод
             acc.RegisterHandler(new Account.DelegateMoney(Show_Msg));
