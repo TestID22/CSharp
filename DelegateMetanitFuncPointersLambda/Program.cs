@@ -18,6 +18,14 @@ namespace DelegateMetanitFuncPointersLambda
             Console.WriteLine(resultFromMethod);
             #endregion
 
+            unsafe
+            {
+                int* p = &resultFromMethod;
+                
+                Console.WriteLine($"0x{(uint)p:x}");
+            }
+
+
             Console.ReadLine();
         }
 
