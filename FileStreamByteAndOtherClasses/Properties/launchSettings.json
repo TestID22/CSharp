@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FileStreamByteAndOtherClasses": {
+      "commandName": "Project",
+      "commandLineArgs": "ALEX ALEX"
+    }
+  }
+}
