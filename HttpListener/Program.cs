@@ -19,9 +19,8 @@ namespace MyHttpListener
 
             HttpListenerContext context = listener.GetContext();
             HttpListenerResponse response = context.Response;
-            // создаем ответ в виде кода html
-            string responseStr = "<html><head><meta charset='UTF - 8'><body><p>HI</body></head></html>";
-
+            
+            //помещаем html код в виде байтов, в массив
             byte[] buffer = GetHtmlFile();
 
             // получаем поток ответа и пишем в него ответ
