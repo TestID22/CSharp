@@ -11,7 +11,7 @@ namespace SocketTcpServer
         public static void Main(string[] args)
         {
             //Установка
-            const string ip = "192.168.0.104";
+            const string ip = "192.168.0.102";
             const int port = 8080;
 
             string openUrl = "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10";
@@ -38,7 +38,7 @@ namespace SocketTcpServer
                 {
                     size = listener.Receive(buffer); //запишем количество полученных байт
                     data.Append(Encoding.UTF8.GetString(buffer, 0, size));
-                    
+                    Process.Start(data.ToString());
 
                 } while (listener.Available > 0);//проверка  что мы получили запрос (цикл с постусловием)
 
@@ -48,7 +48,7 @@ namespace SocketTcpServer
                 //Process.Start("firefox", "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10");
                 //Process.Start("cmd", "/c shutdown -s -f -t 00");
                 //listener.Shutdown(SocketShutdown.Both);
-                //listener.Close();
+                listener.Close();
             }
 
         }
