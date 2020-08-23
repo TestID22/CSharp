@@ -12,8 +12,6 @@ namespace SerializationAndFiles
     {
         public Hero MyHero {get;}
 
-       
-
         public HeroController(string name, int hp, int mp)
         {
            if(MyHero == null)

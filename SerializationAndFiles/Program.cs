@@ -12,13 +12,14 @@ namespace SerializationAndFiles
         {
             Console.WriteLine("Создание Героя");
             var name = Console.ReadLine();
-            HeroController hero = new HeroController(name, 100, 100);
-            LoadHero(hero);
+            HeroController player = new HeroController(name, 100, 100);
+            LoadHero(player);
+
 
             Console.WriteLine("Ошарашенный вор наносит вам с дух ног 10 урона");
-            hero.MyHero.HealthPoint = hero.MyHero.HealthPoint - 10;
-
-            Console.WriteLine("У вашего героя {0} HP", hero.MyHero.HealthPoint);
+            player.MyHero.HealthPoint = player.MyHero.HealthPoint - 10;
+            
+            Console.WriteLine("У вашего героя {0} HP", player.MyHero.HealthPoint);
 
             Console.ReadLine();
         }

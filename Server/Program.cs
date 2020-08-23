@@ -11,7 +11,7 @@ namespace SocketTcpServer
         public static void Main(string[] args)
         {
             //Установка
-            const string ip = "192.168.0.104";
+            const string ip = "192.168.0.106";
             const int port = 8080;
 
             string openUrl = "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10";
@@ -25,6 +25,8 @@ namespace SocketTcpServer
             Socket tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             tcpSocket.Bind(tcpEndPoint);//привязывает сокет к локальному адресу, после чего может ожидать входяших соединений
             tcpSocket.Listen(1);//Слушаем запросы входящего (в данном случае) соединения
+            Console.WriteLine($"Стартуем сервер _ подключайся к {ip}:{port}");
+
             StringBuilder data = new StringBuilder();
 
             while (true)
@@ -42,15 +44,17 @@ namespace SocketTcpServer
 
                 } while (listener.Available > 0);//проверка  что мы получили запрос (цикл с постусловием)
 
+                Console.WriteLine(data.ToString());
                 Console.Title = "Server";
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(data);
+                
                 //Process.Start("firefox", "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10");
                 //Process.Start("cmd", "/c shutdown -s -f -t 00");
                 //listener.Shutdown(SocketShutdown.Both);
-                //listener.Close();
+                listener.Close();
             }
 
         }
+
     }
 }
