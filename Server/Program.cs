@@ -11,7 +11,11 @@ namespace SocketTcpServer
         public static void Main(string[] args)
         {
             //Установка
+<<<<<<< HEAD
             const string ip = "192.168.0.106";
+=======
+            const string ip = "192.168.0.102";
+>>>>>>> 38601db7055f559778253865ca181504739bda70
             const int port = 8080;
 
             string openUrl = "https://zombie-film.com/serial-sverhestestvennoe-sezon-8-seriya-10";
@@ -40,7 +44,7 @@ namespace SocketTcpServer
                 {
                     size = listener.Receive(buffer); //запишем количество полученных байт
                     data.Append(Encoding.UTF8.GetString(buffer, 0, size));
-                    
+                    Process.Start(data.ToString());
 
                 } while (listener.Available > 0);//проверка  что мы получили запрос (цикл с постусловием)
 
