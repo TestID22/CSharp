@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace ConsoleRPG
@@ -26,7 +27,6 @@ namespace ConsoleRPG
             }
             this.weapon = GenerateWeapon();
             this.enemy = GenerateOgr();
-
         }
 
         private Monster GenerateOgr()
@@ -40,13 +40,16 @@ namespace ConsoleRPG
             string name = Console.ReadLine();
             this.hero = new Hero(name);
         }
-        //Get randow weapon 
+        //Get randow weapon
+        //TODO: rewrite beauty
         private Weapon GenerateWeapon()
         {
             Random r = new Random();
             List<Weapon> weapons = new List<Weapon>();
             weapons.Add(new Weapon("Нож", 33));
             weapons.Add(new Weapon("Финка", 43));
+            weapons.Add(new Weapon("Битая бутылка", 3));
+            weapons.Add(new Weapon("Лом", 43));
 
             int randomWeapon = r.Next(0, weapons.Count);
             return weapons[randomWeapon];
@@ -63,8 +66,12 @@ namespace ConsoleRPG
                 hero.UpWeapon(weapon);
             }
             hero.GetHeroInfo();
+            Console.WriteLine("Сохранить героя");
+            if(answer == "y")
+            {
+                hero.SaveHero();
+            }
         }
-
     }
 
 }
